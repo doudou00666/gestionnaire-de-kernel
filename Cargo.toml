@@ -1,6 +1,6 @@
 [package]
 name = "kernel-manager"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 rust-version = "1.85.0"
 description = "Gestionnaire de noyaux externes pour Fedora (CachyOS, Zen, Liquorix)"

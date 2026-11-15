@@ -1,5 +1,5 @@
 %global pkgname kernel-manager
-%global pkgversion 1.0.0
+%global pkgversion 1.0.1
 %global pkgrelease 1
 %global pkgarch x86_64
 
@@ -36,5 +36,8 @@ install -D -m 644 %{pkgname}.desktop %{buildroot}/%{_datadir}/applications/%{pkg
 %{_datadir}/applications/%{pkgname}.desktop
 
 %changelog
+* Sat Nov 15 2026 doudou00666 <doudou00666@gmail.com> - 1.0.1-1
+Correction du desktop file: Exec=/usr/bin/kernel-manager (absolu) pour KDE Plasma
+
 * Sat Nov 15 2026 doudou00666 <doudou00666@gmail.com> - 1.0.0-1
 First release.
