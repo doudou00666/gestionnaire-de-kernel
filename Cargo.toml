@@ -1,6 +1,6 @@
 [package]
 name = "kernel-manager"
-version = "1.0.2"
+version = "1.0.3"
 edition = "2021"
 rust-version = "1.85.0"
 description = "Gestionnaire de noyaux externes pour Fedora (CachyOS, Zen, Liquorix)"
@@ -13,14 +13,11 @@ serde_json = "1"
 sha2 = "0.10"
 hex = "0.4"
 chrono = "0.4"
+gtk4 = { version = "0.11", optional = true }
 
 [features]
-default = []
-gui = ["qtrs"]
-
-[dependencies.qtrs]
-version = "0.5.9"
-optional = true
+default = ["gui"]
+gui = ["gtk4"]
 
 [profile.release]
 opt-level = 3

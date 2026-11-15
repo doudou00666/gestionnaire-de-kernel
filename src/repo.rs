@@ -125,6 +125,13 @@ pub fn fetch_latest_kernels(kind: KernelKind) -> Result<Vec<KernelRelease>, Stri
     Ok(releases)
 }
 
+/// URL du tarball .tar.xz pour une version donnée d'un dépôt.
+pub fn repo_url(version: &str, kind: KernelKind) -> String {
+    let base = kind.repo_base();
+    let prefix = kind.package_prefix();
+    format!("{}{}-{}.tar.xz", base, prefix, version)
+}
+
 /// Extrait le nom de fichier depuis une ligne HTML/listing.
 fn extract_filename(line: &str) -> String {
     let mut s = line.to_string();

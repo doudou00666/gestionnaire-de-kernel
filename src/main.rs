@@ -3,6 +3,8 @@
 mod install;
 mod repo;
 mod sysutil;
+#[cfg(feature = "gui")]
+mod gui;
 
 use repo::KernelKind;
 use std::io::Write;
@@ -18,7 +20,7 @@ fn main() {
 
     if args.is_empty() {
         #[cfg(feature = "gui")]
-        gui::launch();
+        gui::run_gui();
         #[cfg(not(feature = "gui"))]
         print_usage();
         return;
@@ -29,6 +31,8 @@ fn main() {
         "install" | "i" => cmd_install(&args[1..]),
         "remove" | "rm" => cmd_remove(&args[1..]),
         "check" => cmd_check(),
+        #[cfg(feature = "gui")]
+        "gui" => gui::run_gui(),
         "help" | "--help" | "-h" => print_usage(),
         other => {
             eprintln!("Argument inconnu : {}", other);
@@ -263,15 +267,8 @@ fn flush() {
 }
 
 // ----------------------------------------------------------------------
-// GUI (feature optionnel)
+// GUI (feature optionnel) — maintenant dans src/gui.rs
 // ----------------------------------------------------------------------
-
-#[cfg(feature = "gui")]
-mod gui {
-    pub fn launch() {
-        eprintln!("GUI : build avec feature `gui` requis.");
-    }
-}
 
 // ----------------------------------------------------------------------
 // Tests

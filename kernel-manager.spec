@@ -1,5 +1,5 @@
 %global pkgname kernel-manager
-%global pkgversion 1.0.2
+%global pkgversion 1.0.3
 %global pkgrelease 1
 %global pkgarch x86_64
 
@@ -14,7 +14,10 @@ BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: gcc
 BuildRequires: gcc-c++
+BuildRequires: gtk4-devel
+BuildRequires: pkgconf-pkg-config
 Requires: coreutils
+Requires: gtk4
 
 %description
 Gestionnaire de noyaux externes pour Fedora.
@@ -36,6 +39,12 @@ install -D -m 644 %{pkgname}.desktop %{buildroot}/%{_datadir}/applications/%{pkg
 %{_datadir}/applications/%{pkgname}.desktop
 
 %changelog
+* Sat Nov 15 2026 doudou00666 <doudou00666@gmail.com> - 1.0.3-1
+Ajout de l'interface graphique GTK4 (fenêtre principale, choix du type
+de noyau, liste des versions, barre de progression, journal, boutons
+Rafraîchir/Installer). Terminal=false dans le desktop file. 19 tests
+unitaires validés.
+
 * Sat Nov 15 2026 doudou00666 <doudou00666@gmail.com> - 1.0.2-1
 Correction: Terminal=true dans le desktop file (CLI), Categories=System
 
