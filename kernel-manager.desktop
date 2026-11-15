@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Kernel Manager
+GenericName=Kernel Manager
+Comment=Install and manage external kernels for Fedora
+Comment[fr]=Installer et gérer les noyaux externes pour Fedora
+Exec=kernel-manager
+Icon=kernel-manager
+Terminal=false
+Categories=System;Qt;
+Keywords=kernel;fedora;
+Keywords[fr]=noyau;fedora;

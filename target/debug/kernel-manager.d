@@ -1,0 +1,1 @@
+/home/jeanseb/projet/kernel-manager/target/debug/kernel-manager: /home/jeanseb/projet/kernel-manager/src/install.rs /home/jeanseb/projet/kernel-manager/src/main.rs /home/jeanseb/projet/kernel-manager/src/repo.rs /home/jeanseb/projet/kernel-manager/src/sysutil.rs

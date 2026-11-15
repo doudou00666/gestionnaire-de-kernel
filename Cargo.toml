@@ -1,0 +1,27 @@
+[package]
+name = "kernel-manager"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.85.0"
+description = "Gestionnaire de noyaux externes pour Fedora (CachyOS, Zen, Liquorix)"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+ureq = { version = "2", features = ["json", "tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+hex = "0.4"
+chrono = "0.4"
+
+[features]
+default = []
+gui = ["qtrs"]
+
+[dependencies.qtrs]
+version = "0.5.9"
+optional = true
+
+[profile.release]
+opt-level = 3
+strip = true
