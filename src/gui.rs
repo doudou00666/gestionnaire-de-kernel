@@ -215,8 +215,14 @@ pub fn run_gui() {
         Some("org.fedoraproject.kernelmanager"),
         ApplicationFlags::FLAGS_NONE,
     );
-    let window = build_gui(&app);
-    window.present();
+    // La fenêtre doit être créée APRÈS l'initialisation de GTK4,
+    // qui se fait à l'intérieur de app.run(). On la crée donc dans
+    // le handler connect_activate, où GTK est déjà prêt. Créer des
+    // widgets avant app.run() fait planter GTK4 (CSS non calculé).
+    app.connect_activate(move |app| {
+        let window = build_gui(app);
+        window.present();
+    });
     app.run();
 }
 

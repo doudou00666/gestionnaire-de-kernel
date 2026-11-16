@@ -1,5 +1,5 @@
 %global pkgname kernel-manager
-%global pkgversion 1.0.3
+%global pkgversion 1.0.4
 %global pkgrelease 1
 %global pkgarch x86_64
 
@@ -39,6 +39,13 @@ install -D -m 644 %{pkgname}.desktop %{buildroot}/%{_datadir}/applications/%{pkg
 %{_datadir}/applications/%{pkgname}.desktop
 
 %changelog
+* Mon Nov 16 2026 doudou00666 <doudou00666@gmail.com> - 1.0.4-1
+Correction du crash SIGSEGV au lancement de la GUI. La fenêtre GTK4
+était créée avant app.run() (avant l'initialisation du CSS), ce qui
+causait un SIGSEGV dans gtk_css_static_style_get_default. La fenêtre
+est désormais créée dans le handler connect_activate, après
+l'initialisation de GTK4. 19 tests unitaires validés.
+
 * Sat Nov 15 2026 doudou00666 <doudou00666@gmail.com> - 1.0.3-1
 Ajout de l'interface graphique GTK4 (fenêtre principale, choix du type
 de noyau, liste des versions, barre de progression, journal, boutons
