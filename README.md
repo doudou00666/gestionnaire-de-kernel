@@ -39,5 +39,4 @@ dnf install rpm/kernel-manager-1.0.0-1.fc45.x86_64.rpm
 
 Le spec RPM (`kernel-manager.spec`) est en tête de repo.
 
-## Licence
-GPL-3.0-or-later
+
