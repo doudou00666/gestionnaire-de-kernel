@@ -1,5 +1,8 @@
 # Gestionnaire de kernel
 
+![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightblue?style=flat)
+
+
 Gestionnaire de noyaux externes (CachyOS, Zen, Liquorix) pour **Fedora**.
 
 Adapté du [solus-external-kernel-manager](https://depoa.julien68.fr/Linuxon/solus-external-kernel-manager) de Solus.
